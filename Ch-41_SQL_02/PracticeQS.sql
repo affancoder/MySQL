@@ -1,0 +1,87 @@
+CREATE DATABASE IF NOT EXISTS college;
+
+USE college;
+
+CREATE TABLE teacher(
+	id INT PRIMARY KEY,
+    name VARCHAR(25),
+    subject VARCHAR(35),
+    salary INT DEFAULT 0
+);
+
+INSERT INTO teacher
+(id, name, subject, salary)
+VALUES
+(23, "ajay", "math", 50000),
+(47, "bharat", "english", 60000),
+(18, "chetan", "chemistry", 45000),
+(9, "divya", "physics", 75000);
+
+SELECT * FROM teacher;
+
+UPDATE teacher
+SET salary = salary + (0.25) * salary;
+
+-- ALTER TABLE teacher
+-- DROP COLUMN ctc;
+
+-- SELECT * FROM teacher
+-- WHERE salary > 55000;
+
+-- ALTER TABLE teacher
+-- CHANGE COLUMN salary ctc INT DEFAULT 0;
+
+-- ALTER TABLE teacher
+-- ADD COLUMN city VARCHAR(35) DEFAULT "gurugram";
+
+CREATE TABLE student(
+	roll_no INT UNIQUE,
+    name VARCHAR(25) NOT NULL,
+    city VARCHAR(40),
+    marks INT DEFAULT 0
+);
+
+INSERT INTO student
+(roll_no, name, city, marks)
+VALUES
+(110, "adam", "delhi", 76),
+(108, "bob", "mumbai", 65),
+(124, "casey", "pune", 94),
+(112, "duke", "pune", 80);
+
+SELECT * FROM student;
+
+ALTER TABLE student 
+ADD COLUMN grade VARCHAR(2);
+
+UPDATE student
+SET grade = "O"
+WHERE marks >= 80;
+
+UPDATE student
+SET grade = "A+"
+WHERE marks >= 70 AND marks <=80;
+
+UPDATE student
+SET grade = "B+"
+WHERE marks >= 60 AND marks <=70;
+
+SET SQL_SAFE_UPDATES = 0;
+
+-- SELECT avg(marks)
+-- FROM student;
+
+-- SELECT city, max(marks)
+-- FROM student
+-- GROUP BY city;
+
+-- SELECT city
+-- FROM student
+-- GROUP BY city;
+
+-- SELECT DISTINCT city
+-- FROM student;
+
+-- SELECT *FROM student
+-- WHERE marks > 75;
+

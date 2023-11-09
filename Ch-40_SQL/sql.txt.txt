@@ -1,0 +1,3 @@
+SQL - Structured query language
+It is language which has relation with the data bases.
+DIFFERENCE BWT TRUNCATE AND DROP--Drop delete the table but Truncate delete the data of the table.ALTER Command is used to add, delete, modify the attributes of the relations (tables)in the database.
